@@ -1,0 +1,22 @@
+@inherits LayoutComponentBase
+
+<MudThemeProvider />
+<MudPopoverProvider />
+<MudDialogProvider />
+<MudSnackbarProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1" Color="Color.Primary">
+        <MudText Typo="Typo.h5" Class="ml-3">La mia App Blazor</MudText>
+        <MudSpacer />
+    </MudAppBar>
+    <MudMainContent Class="mt-16 pa-4">
+        @Body
+    </MudMainContent>
+</MudLayout>
+
+<div id="blazor-error-ui">
+    Si è verificato un errore.
+    <a href="" class="reload">Ricarica</a>
+    <a class="dismiss">🗙</a>
+</div>

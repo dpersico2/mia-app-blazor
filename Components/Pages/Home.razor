@@ -1,0 +1,49 @@
+@page "/"
+
+<PageTitle>Benvenuto</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-8">
+    <MudPaper Class="pa-8" Elevation="3">
+        <MudText Typo="Typo.h3" GutterBottom="true" Color="Color.Primary">
+            🎉 Benvenuto!
+        </MudText>
+        <MudText Typo="Typo.h6" Class="mb-4">
+            Il tuo ambiente Blazor + MudBlazor funziona correttamente.
+        </MudText>
+        <MudDivider Class="my-4" />
+        <MudText Typo="Typo.body1" Class="mb-4">
+            Questa è la tua pagina di partenza. Da qui costruiremo insieme
+            il software che hai in mente.
+        </MudText>
+
+        <MudAlert Severity="Severity.Success" Class="my-4">
+            Tutto pronto! Ora dimmi cosa vuoi creare.
+        </MudAlert>
+
+        <MudButton Variant="Variant.Filled"
+                   Color="Color.Primary"
+                   Size="Size.Large"
+                   StartIcon="@Icons.Material.Filled.Celebration"
+                   OnClick="MostraMessaggio">
+            Cliccami per provare
+        </MudButton>
+
+        @if (cliccato)
+        {
+            <MudAlert Severity="Severity.Info" Class="mt-4">
+                Hai cliccato @contatore volte. L'interattività funziona! ✅
+            </MudAlert>
+        }
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private bool cliccato = false;
+    private int contatore = 0;
+
+    private void MostraMessaggio()
+    {
+        cliccato = true;
+        contatore++;
+    }
+}
